@@ -32,9 +32,9 @@ test('api', function (t) {
         });
         
 
-        request(app).get('/contacts/1')
+        request(app).get('/api/contacts/1')
         .end(function (err, res) {
-            t.ok(!err, 'get /contacts/{id} no error.');
+            t.ok(!err, 'get /api/contacts/{id} no error.');
             t.strictEqual(res.statusCode, 200, 'get /contacts/{id} 200 status.');
             responseSchema.validate(res.body, function (error) {
                 t.ok(!error, 'Response schema valid.');
